@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import { MdHome} from "react-icons/md";
+import {MdPhotoLibrary} from "react-icons/md"
+import {MdSubscriptions} from "react-icons/md"
 const SideBar = () => {
 
   
-  
+  const fontStyles = { fontSize: '30px'}
   const isMenuOpen = useSelector((store)=>store.app.isMenuOpen)
   // console.log(isMenuOpen)
   if(!isMenuOpen)return null
@@ -14,36 +16,27 @@ const SideBar = () => {
 
    <div className='p-4 shadow-lg'>
    
-   <div className='pt-3'>
-   <Link to="/"><h1 className='pt-1'>Home</h1></Link>
-    <h1 className='pt-1'>Shorts</h1>
-    <h1 className='pt-1'>Videos</h1>
-    <h1 className='pt-1'>Live</h1>
+  
+   <Link to="/">
+    <div className='mt-4 ' >
+    <h1 className='ml-2 '><MdHome style={fontStyles}/></h1>
+    <h1 className=' ml-2 text-sm '>Home</h1>
+    </div>
+    </Link>
+    <div className='cursor-pointer' >
+    <h1 className='ml-2 mt-10'><MdPhotoLibrary style={fontStyles}/></h1>
+    <h1 className=' ml-2 text-sm '>Library</h1>
+    </div>
+
+    <div className='cursor-pointer'>
+    <h1 className='ml-2 mt-10'><MdSubscriptions style={fontStyles}/></h1>
+    <h1 className=' ml-2 text-sm '>Subscriptions</h1>
+    </div>
    </div>
   
-   <div className='pt-3 '>
-    <h1 className='font-bold'>Subscriptions</h1>
-    <ul>
-        <li className='pt-1'>Music</li>
-        <li className='pt-1'>Sports</li>
-        <li className='pt-1'>Games</li>
-        <li className='pt-1'>Movies</li>
+   
 
-    </ul>
-   </div>
 
-   <div className='pt-3'>
-   <h1 className='font-bold'>Watch Later</h1>
-    <ul>
-        <li className='pt-1'>Music</li>
-        <li className='pt-1'>Sports</li>
-        <li className='pt-1'>Games</li>
-        <li className='pt-1'>Movies</li>
-
-    </ul>
-   </div>
-
-    </div>
   )
 }
 }

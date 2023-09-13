@@ -1,5 +1,5 @@
 
-let myAuthApi = "AIzaSyC6xFIkBYryC0N1jUm9HncB4isWDDt1qiU"
+export let myAuthApi = "AIzaSyC6xFIkBYryC0N1jUm9HncB4isWDDt1qiU"
 export let youtubeApi ="https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=40&regionCode=IN&key="+myAuthApi;
 export let searchSuggestions ="http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q="
 

@@ -21,10 +21,10 @@ const VideoCard = ({info}) => {
  
   return (
 
-    <div className='videocard p-2 m-3 w-72 shadow-lg bg-slate-150 rounded-2xl '>
-        <img alt="image" className="rounded-xl" src={thumbnails.medium.url}/>
+    <div className='videocard p-3 ml-5 mb-4 mt-4 mr-9 w-72 shadow-lg bg-slate-150 rounded-2xl '>
+        <img alt="image" className="rounded-2xl " src={thumbnails.medium.url}/>
         <ul>
-            <li className='text-l mt-2 font-bold line-clamp-2'>{title}</li>
+            <li className='text-l mt-2 font-bold truncate'>{title}</li>
             <li className='text-sm font-medium line-clamp-2'>{channelTitle}</li>
             <li className='text-sm font-medium line-clamp-2'>{ViewsConvertor(viewCount)} views</li>            
         </ul>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Button =
-({name})=> <button type="button" className=' h-[2.25rem] border mx-2 bg-slate-200 rounded-lg px-2 py-2 '>{name}</button>
+({name})=> <button type="button" className=' h-[2.25rem] border mx-2 bg-slate-200 hover:bg-slate-300 rounded-lg px-2 py-2 '>{name}</button>
 
 
 

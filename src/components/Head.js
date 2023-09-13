@@ -1,12 +1,24 @@
 import React, { useState , useEffect} from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { openMenu, togglemenu } from '../utils/appSlice';
 import { Link } from 'react-router-dom';
 import { searchSuggestions } from '../utils/contants';
+import { BsBell } from 'react-icons/bs';
+import { BiSolidUserCircle } from 'react-icons/bi';
+import { MdOutlineVideoSettings } from 'react-icons/md'
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { FaYoutube } from 'react-icons/fa';
+const fontStyles = { fontSize: '25px'}
+const BigfontStyles = { fontSize: '35px'}
+
+
 
 const Head = () => {
+  const val = useSelector((state) => state.app.isMenuOpen)
+  console.log(val)
   const dispatch = useDispatch();
   const handleToggle=()=>{
+    console.log("Clicked")
       dispatch(togglemenu());
   }
 
@@ -28,11 +40,6 @@ const Head = () => {
   const handleSearchField=(e)=>{
     setSearchText(e.target.value)
   }
-
- 
-
-
-  
 
   useEffect(()=>{  // debouncing
     const timer = setTimeout(handleSearch, 100); 
@@ -64,15 +71,15 @@ const Head = () => {
   return (
     <div className='grid grid-flow-col shadow-lg '>
     <div className='flex p-4 col-span-1 '> 
-
-    <img className="h-12 cursor-pointer" 
-    onClick={handleToggle} 
-    src='https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg'></img>
+    <div className="h-12 mr-5 ml-4 cursor-pointer flex items-center" onClick={handleToggle} >
+    <GiHamburgerMenu style={fontStyles}/>
+    </div>
+    
     
     <Link to="/">
-    <img onClick={handleMenu} className="h-12 p-2 cursor-pointer" 
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjTC5_z4R9dXJfp1VeYabOQdTCMs_qLlu_A3ePQy-SytKgxAiRm0k0h4LEPPqtqy9JfA&usqp=CAU">
-    </img>
+    
+    <div onClick={handleMenu} className="h-12 mr-5 ml-4 cursor-pointer flex items-center" >
+      <FaYoutube style= {BigfontStyles}/></div>
     </Link>
     </div>
 
@@ -86,7 +93,7 @@ const Head = () => {
     value={searchText}>
     </input>
     
-    <Link to={`search/${searchText}`}><button className='border border-gray-850 h-8 rounded-r-full px-3 ' >🔎</button></Link>
+    <Link to={`search/${searchText}`}><button className='border border-gray-850 bg-slate-200  h-8 rounded-r-full px-3 ' >🔎</button></Link>
     { searchData!="" && (searchSuggestion && <div className='fixed top-[3.75rem] bg-white border rounded-lg border-slate-100 p-2 shadow-lg w-[30rem]' >
        <ul>
         {
@@ -105,10 +112,18 @@ const Head = () => {
 
     </div>
 
-    <div className='p-6 col-span-1 flex'>
-        <div className='mx-2 cursor-pointer'>🧑‍💻</div>
-        <div className='mx-2 cursor-pointer'>🔔</div>
-        <div className='mx-2 cursor-pointer'>📷</div>
+    <div className='p-6 col-span-1 flex items-center'>
+
+        <div className='mx-2 mt-[0.4rem] h-21 w-[2rem] cursor-pointer'>
+          <MdOutlineVideoSettings style={fontStyles} />
+        </div>
+        <div className='mx-2 mt-[0.4rem] h-21 w-[2rem] cursor-pointer'>
+          <BsBell style={fontStyles} />
+        </div>
+        <div className='mx-2 mt-[0.4rem] h-21 w-[2rem] cursor-pointer'>
+          <BiSolidUserCircle style={fontStyles} />
+        </div>
+        
     </div>
     </div>
   )

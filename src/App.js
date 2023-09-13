@@ -34,8 +34,9 @@ function App() {
       <Route path='/'element={<Body/>}>
       <Route path='/'element={<MainContainer/>}></Route>
       <Route path='watch'element={<WatchPage/>}></Route>
-      </Route>
       <Route path='/search/:search' element ={<SearchComponent/>}></Route>
+      </Route>
+      
       
     
       </Routes>
