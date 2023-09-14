@@ -6,14 +6,16 @@ const Button =
 
 
 const ButtonContainer = () => {
-    const List =["Politics", "Indie Songs","Badiminton","Music", "Cricket", "Movies","Dua Lipa", "Tennis","Podcasts",
+    const List =["Politics", "Indie Songs","Badiminton","Music", "Cricket", "Movies","Dua Lipa","Politics", "Indie Songs","Badiminton","Music", "Cricket", "Movies","Dua Lipa", "Tennis","Podcasts",
     "HTML", "CSS" ]
   return (
-    <div className='flex'>
+    <div className='w -full '>
+      <div className='scrollbarshow sticky top-20vh overflow-x-scroll'>
     {
     List.map((item, index)=> <Button key={index}  name={item} />
     )
     }
+    </div>
     </div>
   )
 }

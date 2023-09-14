@@ -15,11 +15,15 @@ const BigfontStyles = { fontSize: '35px'}
 
 const Head = () => {
   const val = useSelector((state) => state.app.isMenuOpen)
-  console.log(val)
+  // console.log(val)
   const dispatch = useDispatch();
   const handleToggle=()=>{
-    console.log("Clicked")
+    // console.log("Clicked")
       dispatch(togglemenu());
+  }
+  
+  const resetSearchValue =()=>{
+    setSearchText("");
   }
 
   const handleMenu=()=>{
@@ -93,7 +97,7 @@ const Head = () => {
     value={searchText}>
     </input>
     
-    <Link to={`search/${searchText}`}><button className='border border-gray-850 bg-slate-200  h-8 rounded-r-full px-3 ' >🔎</button></Link>
+    <Link onClick={resetSearchValue} to={`search/${searchText}`}><button className='border border-gray-850 bg-slate-200  h-8 rounded-r-full px-3 ' >🔎</button></Link>
     { searchData!="" && (searchSuggestion && <div className='fixed top-[3.75rem] bg-white border rounded-lg border-slate-100 p-2 shadow-lg w-[30rem]' >
        <ul>
         {

@@ -22,9 +22,7 @@ const WatchPage = () => {
       SetVideoData(result?.items[0].snippet)
     
   }
-  useEffect(()=>{
-    handleSearch(uniqueId);
-  },[])
+ 
 
     
     useEffect( ()=>{
@@ -39,6 +37,9 @@ const WatchPage = () => {
     const [searchLink] = useSearchParams();
     const uniqueId = searchLink.get("v");
     console.log(uniqueId)
+    useEffect(()=>{
+      handleSearch(uniqueId);
+    },[uniqueId])
   // I want id of video
   return (
     <>
@@ -52,8 +53,7 @@ const WatchPage = () => {
     </div>
     <div className='pl-10 pt-4 '>
     <h1 className='text-lg font-bold flex mt-1 mb-2'>
-      <span className='mr-[24.5rem]'>{VideoData?.channelTitle}</span>
-      <span >{VideoData?.title}</span>
+      <span className='' >{VideoData?.title}</span>
     </h1>
     <h1 className='text-sm w-[43rem] line-clamp-2 '>{VideoData?.description}</h1>
     </div>

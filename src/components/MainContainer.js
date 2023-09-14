@@ -2,6 +2,7 @@ import React from 'react'
 import ButtonContainer from './ButtonContainer'
 import VideoContainer from './VideoContainer'
 import {youtubeApi} from '../utils/contants.js'
+import Buttons from './Buttons'
 const MainContainer = () => {
   // two things ek button and ek video containers
   return (

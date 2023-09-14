@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 import { useParams,Link } from "react-router-dom"
 import { myAuthApi } from "../utils/contants"
-import SlideVideoCard from "./SearchVideoCard"
+import SearchVideoCard from "./SearchVideoCard"
 
 
 
@@ -31,8 +31,8 @@ const SearchComponent = () => {
       {
         videos.map((item)=> {
         return (<Link key={item.id} to={"/watch?v="+item.id}> 
-        <div className=" flex flex-row  rounded-2xl  shadow-lg">
-        <SlideVideoCard 
+        <div className=" flex flex-row  rounded-2xl ">
+        <SearchVideoCard 
          info={item} />
          </div>
          </Link>)
