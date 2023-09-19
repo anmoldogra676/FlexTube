@@ -43,7 +43,8 @@ const WatchPage = () => {
   // I want id of video
   return (
     <>
-    <div className='flex flex-col'>
+    
+    <div className='watchPageflex flex-col '>
     {/* <Fetchdata uniqueId ={uniqueId}/> */}
     <div className='videoPlayer pl-[2.7rem] pt-[2.75rem] '>
         <iframe className="rounded-lg" width="680" height="400" 
@@ -51,6 +52,7 @@ const WatchPage = () => {
          title="YouTube video player"  allow="
          autoplay; " ></iframe>
     </div>
+    
     <div className='pl-10 pt-4 '>
     <h1 className='text-lg font-bold flex mt-1 mb-2'>
       <span className='' >{VideoData?.title}</span>

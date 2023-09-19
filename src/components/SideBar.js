@@ -14,7 +14,7 @@ const SideBar = () => {
   else {
   return (
 
-   <div className='p-4 shadow-lg'>
+   <div className='p-4 shadow-lg  bg-slate-100 '>
    
   
    <Link to="/">

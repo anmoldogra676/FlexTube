@@ -73,7 +73,8 @@ const Head = () => {
  }
 
   return (
-    <div className='grid grid-flow-col shadow-lg '>
+
+    <div className='grid grid-flow-col shadow-lg sticky top-0 bottom-0 z-10 bg-slate-100 '>
     <div className='flex p-4 col-span-1 '> 
     <div className="h-12 mr-5 ml-4 cursor-pointer flex items-center" onClick={handleToggle} >
     <GiHamburgerMenu style={fontStyles}/>
@@ -130,6 +131,7 @@ const Head = () => {
         
     </div>
     </div>
+
   )
 }
 

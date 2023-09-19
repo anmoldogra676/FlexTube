@@ -6,7 +6,7 @@ import Buttons from './Buttons'
 const MainContainer = () => {
   // two things ek button and ek video containers
   return (
-    <div className='p-6'>
+    <div className='p-6 '>
     <ButtonContainer/>
     <VideoContainer url={youtubeApi} />
     </div>
